@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Introduction - The Easy Way to Quit Escapist Fiction</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Easy Way to Quit Escapist Fiction</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction/edit/main/src/src/01.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="chapter-1-introduction"><a class="header" href="#chapter-1-introduction">Chapter 1: Introduction</a></h1>
+<h2 id="about-this-book"><a class="header" href="#about-this-book">About This Book</a></h2>
+<p>Most books about quitting something begin the same way.</p>
+<p>They tell you to stop. Right now. Before you finish the chapter, before you turn the page, before you even understand what you're stopping.</p>
+<p>This book won't do that.</p>
+<p>Telling someone who uses fiction to escape their own mind to "just stop reading" is a bit like telling someone who's drowning to stop holding their breath. The instruction isn't wrong, exactly. It's just useless. The person isn't holding their breath because they enjoy it. They're holding it because they haven't been shown how to swim yet.</p>
+<p>So we're going to do this differently. We're going to figure out how you learned to swim into fiction in the first place. Once you see that clearly, the drowning stops on its own.</p>
+<h2 id="a-warning-before-you-continue"><a class="header" href="#a-warning-before-you-continue">A Warning Before You Continue</a></h2>
+<p>Here's something that might surprise you.</p>
+<p>I'm not going to ask you to give anything up. Not today, not tomorrow, not for the entire time you're reading this book.</p>
+<p>That probably sounds like a strange thing for a book about quitting to say. Stay with me, because there's a reason for it, and the reason is the whole method.</p>
+<h2 id="read-before-you-decide"><a class="header" href="#read-before-you-decide">Read Before You Decide</a></h2>
+<p>Before we go any further, let's ask the obvious question. The one you may have been asking yourself for months, maybe years, usually around 2 AM.</p>
+<p>Why is it that you can control yourself in almost every other part of your life — you show up to work on time, you pay your bills, you can walk past a bakery without buying anything, you can put down a phone mid-conversation — and yet you cannot seem to put down a mediocre web novel at chapter 340 of a story you don't even particularly admire anymore?</p>
+<p>You're not a weak person. You've already proven that, dozens of times a day, in a dozen other situations. So why does this one thing keep beating you?</p>
+<p>The answer isn't a character flaw. It's not a lack of discipline, and it's definitely not that you're somehow more addicted or more broken than other people. The answer is much simpler, and much more useful:</p>
+<p>You have never actually understood what's happening when it happens. You've tried to stop the behavior without ever looking directly at the trap that produces it. And a trap you don't understand is a trap you can't escape — no matter how hard you pull against it.</p>
+<p>That's really what this whole book is. Not a set of rules. Not a system of restrictions. Just a long, clear look at the trap, from every angle, until there's nothing left to see that you're afraid of.</p>
+<h2 id="how-to-read-this-book"><a class="header" href="#how-to-read-this-book">How to Read This Book</a></h2>
+<p>Now here's the part that will feel backwards, so read it twice.</p>
+<p><strong>Do not stop reading fiction while you read this book.</strong></p>
+<p>Keep your usual habits exactly as they are. If you normally read three chapters before bed, read three chapters before bed. If you have forty tabs open right now, leave them open. Don't restrict, don't ration, don't try to "cut down" as some kind of trial run for quitting later.</p>
+<p>This isn't a loophole, and it isn't me being generous. It's a precise instruction, and skipping it will make everything harder.</p>
+<p>Here's why. If you try to quit before you understand the trap, all you're doing is creating a gap — a hole where the fiction used to be — and calling that gap "willpower." You sit there, not reading, white-knuckling your way through a craving, telling yourself you're being strong. But underneath, you still believe fiction was giving you something valuable. Relief. Escape. A version of life that felt better than your own. If you still believe that, of course the gap feels unbearable. You're convinced you're starving yourself of something you need.</p>
+<p>That belief is the actual problem. Not the reading. The belief.</p>
+<p>So the goal of this book is not to help you resist temptation more successfully than you have before. Plenty of other books already try that, and you've probably already tried their advice, and it probably already didn't work — not because you didn't try hard enough, but because willpower was never the right tool for this job.</p>
+<p>The goal here is different. The goal is to remove the temptation itself. To take apart, piece by piece, the illusion that fiction is doing something for you that nothing else can. Once that illusion is gone, there's nothing left to resist. You don't fight your way out of the trap. You just notice, one day, that you're already standing outside it.</p>
+<h2 id="the-stage-magicians-trick"><a class="header" href="#the-stage-magicians-trick">The Stage Magician's Trick</a></h2>
+<p>Think about the last time you watched a good magic trick. A coin vanishes into thin air. A card you picked, shuffled somewhere into the middle of the deck, ends up on top. For a second, something impossible seems to have happened, and some small, delighted part of your brain half-believes in magic.</p>
+<p>Now think about what happens the moment someone shows you the mechanism. The hidden pocket. The mirror under the table. The extra card palmed in the magician's other hand.</p>
+<p>Something interesting occurs. You don't have to force yourself to stop believing in the trick. You don't grit your teeth and resist the temptation to think it was real magic. The belief simply isn't available to you anymore. You saw the mirror. The illusion doesn't argue with you — it just quietly stops existing.</p>
+<p>Nobody needs willpower to stop believing in a magic trick once they've seen how it's done. Willpower is only required when part of you still believes the trick is real.</p>
+<p>This book is not going to ask you to try harder, to be stronger, or to grip the reading device a little less tightly next time your fingers reach for it out of habit. It's going to show you the mirror. Once you see exactly what fiction has actually been doing for you — and, more importantly, what it hasn't — the craving won't need to be fought. It will simply have nothing left to stand on.</p>
+<h2 id="the-2-am-glow"><a class="header" href="#the-2-am-glow">The 2 AM Glow</a></h2>
+<p>You know this scene. You may be living some version of it tonight.</p>
+<p>It's late. The room is dark except for the small rectangle of light in your hands, the brightness turned down low so it doesn't wake anyone, or so you can pretend to yourself that you're being responsible about this. You told yourself an hour ago that you'd stop after "just this arc." The arc ended. There was a cliffhanger. Of course there was — there's always a cliffhanger, that's not an accident, we'll get to that later.</p>
+<p>So you keep going. You do the math in your head: if I sleep now, I get four hours. If I read ten more minutes, I get three hifty-five. The math never actually stops you. It just becomes part of the ritual — a little bargaining session with yourself that you always lose, because the part of you doing the negotiating already knows how this ends.</p>
+<p>Somewhere around chapter after chapter, something odd happens. You're not even sure you're enjoying it anymore. The prose might be clumsy. The plot might be dragging. You might catch yourself thinking, <em>this really isn't that good</em>, and keep reading anyway. That's worth sitting with for a moment, because it tells you something important: whatever is pulling you forward at 2 AM, it isn't the quality of the story. Something else is doing the pulling. We'll come back to that.</p>
+<h2 id="tab-hoarding"><a class="header" href="#tab-hoarding">Tab Hoarding</a></h2>
+<p>Here's another familiar shape this takes.</p>
+<p>Forty, fifty, maybe more tabs sitting open across your phone and your laptop. Webtoons paused mid-panel. Light novels bookmarked at chapter breaks. A manga you started eight months ago that you swear you'll finish. You don't close them. Closing them feels like it would cost you something, even though you can't quite say what.</p>
+<p>If you look at it honestly, those open tabs aren't really about the stories anymore. They're a kind of safety net — a promise to yourself that escape is always one tap away, no matter what happens the rest of the day. It's less like a bookshelf and more like a fire exit you've installed in every room of your life, just in case reality gets to be too much and you need somewhere else to go.</p>
+<p>We'll take a much closer look at that particular feeling later in this book, because it's one of the most important threads running underneath the whole habit.</p>
+<h2 id="the-post-binge-void"><a class="header" href="#the-post-binge-void">The Post-Binge Void</a></h2>
+<p>And then there's the moment after.</p>
+<p>You close the app, or you finish the volume, or the episode ends and the credits roll. For a second, the room feels very quiet and very still. Nothing in your actual life has changed. The work project is exactly as unfinished as it was four hours ago. The conversation you've been avoiding is still avoided. The tiredness in your body hasn't gone anywhere — if anything, it's heavier now, sitting behind your eyes like a low fog.</p>
+<p>There's a specific flavor to that moment. Not quite guilt. Not quite regret. More like a mild, formless emptiness — the sense that you spent something valuable and can't remember exactly what you got for it.</p>
+<p>Most people move past that feeling fast. They reach for their phone again, or they tell themselves they'll deal with it tomorrow, or they simply go to sleep before they have to look at it too closely. That's understandable. Nobody enjoys sitting with an unexplained emptiness.</p>
+<p>But we're going to look at it closely in this book, because that feeling is a clue, and it's telling you something true: whatever fiction was supposed to be giving you, it didn't actually deliver it. If it had, you wouldn't feel empty afterward. You'd feel full.</p>
+<p>Here is the idea I want you to carry with you into the next chapter, and really, into the rest of the book. You are not trapped because fiction is impossibly good. You are trapped because you believe it's giving you something you cannot get anywhere else — relief, comfort, excitement, a version of yourself that feels more alive than the one sitting in the dark at 2 AM. Once that belief disappears, quitting stops being a struggle. It becomes something closer to common sense. You don't fight your way out of a belief you no longer hold.</p>
+<p>That's the whole method, in one sentence. Everything else in this book is just that sentence, examined slowly, from every angle, until you can see it as clearly as you'd see a mirror once someone points it out.</p>
+<p>So here's where we stand. You haven't given anything up yet, and you're not going to, not for a while. You're going to keep reading exactly as you always have, while we look — calmly, honestly, without judgment — at what's actually happening underneath the habit.</p>
+<p>In the next chapter, we'll look directly at the method itself: why trying to fight a craving with willpower is set up to fail from the start, and why removing the desire underneath it works instead. It's a strange kind of relief, once you see it. You're not about to be told to be stronger. You're about to be shown something you've simply never been shown before.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next prefetch" href="02.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next prefetch" href="02.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

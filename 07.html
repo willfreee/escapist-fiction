@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>What Am I Giving Up? - The Easy Way to Quit Escapist Fiction</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Easy Way to Quit Escapist Fiction</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction/edit/main/src/src/07.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="chapter-7-what-am-i-giving-up"><a class="header" href="#chapter-7-what-am-i-giving-up">Chapter 7: What Am I Giving Up?</a></h1>
+<h2 id="the-panic-before-the-relief"><a class="header" href="#the-panic-before-the-relief">The Panic Before the Relief</a></h2>
+<p>Here's something worth noticing the moment someone seriously considers stepping away from compulsive fiction.</p>
+<p>You'd expect the first reaction to be relief. After all, you've read the last six chapters. You understand, at least intellectually, that the habit isn't relieving your stress, isn't curing your boredom, isn't sparking anything, isn't protecting you. So the moment you actually picture stopping, the natural response should be something like lightness.</p>
+<p>That's usually not what happens, though. What happens instead is a quiet, sharp spike of panic — not about the habit itself, but about the space it will leave behind. <em>What will I do instead? What happens to all those evenings? What happens to me, without it?</em></p>
+<p>That reaction is worth sitting with for a second, because it's strange. Why would stopping something that leaves you exhausted, foggy-headed, and behind on your own life feel like you're being asked to hand over a prized possession? People don't panic at the thought of giving up a chore. They panic at the thought of giving up something they believe is genuinely valuable.</p>
+<p>So here's the premise this chapter is going to walk through carefully: you are not giving up a source of joy, comfort, or meaning. You are giving up a chronic mental tax — one you've been paying for so long that its absence <em>feels</em> like a loss, purely because you've never gone a stretch of time without paying it.</p>
+<h2 id="71-nothing-at-all"><a class="header" href="#71-nothing-at-all">7.1 Nothing at All</a></h2>
+<p>Let's do something simple and honest: audit the actual ledger.</p>
+<p>Take a typical four-hour binge — the kind you've probably had dozens of times. Strip away the nostalgia, the sense-memory of comfort, the vague feeling that it was "nice." Just look at what it actually produced. Zero tangible assets. Zero new skills. Zero lasting peace, since the restlessness underneath it was back within the hour. And on the other side of the ledger: a guaranteed entry of brain fog the next morning, a task list that didn't get shorter, and a sleep debt you'll be paying off in slow motion for the next two days.</p>
+<p>That's the real transaction, laid out plainly. Four hours spent, and nothing durable received in exchange. Compare that to almost anything else you might have done with those four hours — even something as unremarkable as an early night's sleep — and the fiction session doesn't come out ahead. It comes out at zero, at best, and usually in the negative once you count the following day's fog.</p>
+<p>So when you imagine "giving up" the habit, what exactly is the thing you're picturing losing? Look closely, and there's nothing there to lose. There's no treasure in that four hours. There's only the temporary numbing of a restlessness the habit itself created — which means quitting doesn't cost you the numbing agent and leave you exposed. It removes the source of the restlessness in the first place.</p>
+<h2 id="72-the-beautiful-empty-space"><a class="header" href="#72-the-beautiful-empty-space">7.2 The Beautiful Empty Space</a></h2>
+<p>This brings us to the part that actually frightens people most: the quiet space left behind once the habit stops.</p>
+<p>Most people picture this space as a hollow, aching vacuum — hours of silence with nothing to fill them, an unbearable stretch of blankness they'll have to somehow endure. That picture is almost the opposite of what actually happens.</p>
+<p>What appears in that space isn't emptiness. It's your mind returning to its natural baseline — the quiet, steady awareness that existed before years of narrative bombardment recalibrated what "normal" was supposed to feel like. That baseline isn't painful. It's simply unfamiliar, because you haven't experienced it in so long that you've forgotten it's the default setting, not a deprivation.</p>
+<p>Think of it this way. A room that's been filled with loud music for years can feel unsettling the moment the music stops — not because silence is bad, but because your ears have forgotten what silence sounds like. Give it a few minutes, though, and the silence stops feeling like an absence. It starts feeling like space. Room to think. Room to notice things you'd stopped noticing. That's what's actually waiting on the other side of the habit — not a void to be feared, but a kind of spaciousness you've simply lost the habit of experiencing.</p>
+<h2 id="dropping-the-heavy-backpack"><a class="header" href="#dropping-the-heavy-backpack">Dropping the Heavy Backpack</a></h2>
+<p>Here's a picture that makes this easier to hold onto.</p>
+<p>Imagine you've been walking up a long, steep hill wearing a fifty-pound backpack, filled with nothing but gravel. It's been on your back so long you've adjusted to the weight — your shoulders have learned to carry it, your posture has bent around it, and some part of you has started to think of the strain as simply what walking feels like.</p>
+<p>Now imagine someone stops you and says: unbuckle it. Set it down.</p>
+<p>You wouldn't stand there grieving the gravel. You wouldn't scan the ground for another fifty-pound object to strap on in its place, worried about what you'll carry now that the backpack's gone. You'd simply take a breath, feel your shoulders drop, and realize — with something close to surprise — how light walking was always supposed to feel. The gravel was never doing anything for you. It was just weight, and you'd carried it so long you mistook the strain for normal.</p>
+<p>Quitting compulsive fiction is not a sacrifice in any sense that deserves the word. It's unbuckling the pack.</p>
+<h2 id="the-bookmark-folder"><a class="header" href="#the-bookmark-folder">The Bookmark Folder</a></h2>
+<p>You'll likely notice this resistance show up somewhere very specific and very small: a folder of a hundred or more saved series, bookmarked across half a dozen platforms, most of which you haven't opened in months.</p>
+<p>Consider deleting it, and something in you flinches — a small, irrational spike of grief, as if you were about to throw away something with real value. But pause and look at what's actually in that folder. Placeholders. Digital markers for stories you were never going to get to anyway. Treating the deletion of a bookmark folder like the loss of an asset is exactly the kind of illusion this book has been pointing at from the start — mistaking the accumulation of <em>potential</em> escape for something you'd genuinely miss if it were gone.</p>
+<h2 id="the-unscheduled-evening"><a class="header" href="#the-unscheduled-evening">The Unscheduled Evening</a></h2>
+<p>Or notice this one: you glance at your calendar and see a Friday night with nothing planned. No obligations, no plans, just open time. And instead of feeling free, you feel a pang of dread — a quiet assumption that an evening without a screen or a story in front of you must, by definition, be unbearable.</p>
+<p>That dread isn't a fact about unscheduled evenings. It's a prediction, made by a mind that's forgotten what unscheduled evenings used to feel like before every gap got automatically filled. The prediction feels certain. It isn't tested. Most people who make it this far in the book have already started to suspect that.</p>
+<h2 id="what-will-i-do-with-my-mind"><a class="header" href="#what-will-i-do-with-my-mind">"What Will I Do With My Mind?"</a></h2>
+<p>And here's the deepest version of the fear, worth naming directly: the worry that without a constant stream of narrative stimulation, your own mind will simply collapse into permanent, unbearable boredom — that there's nothing underneath the stories except an empty room you'll be trapped in forever.</p>
+<p>There isn't. What's underneath is just a mind that hasn't been given the chance, in a long time, to sit with itself without external narration running constantly on top of it. That's not a void. It's simply unpracticed quiet — and unpracticed things always feel harder than they are, right up until you actually try them.</p>
+<p><strong>Quitting escapist fiction doesn't create a void in your life. It stops the drain that was emptying it in the first place.</strong> You are not sacrificing comfort, meaning, or joy. You're setting down fifty pounds of gravel you'd mistaken for something worth carrying. And once you fully believe that — not as a slogan, but as something you've actually examined — there's a natural next question worth asking, because one myth in particular has probably kept you carrying that backpack longer than any other: the belief that all those hours of reading were, at the very least, a legitimate form of rest. That's the illusion we'll take apart next.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="06.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="08.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="06.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="08.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Brainwashing - The Easy Way to Quit Escapist Fiction</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Easy Way to Quit Escapist Fiction</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction/edit/main/src/src/05.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="chapter-5-brainwashing"><a class="header" href="#chapter-5-brainwashing">Chapter 5: Brainwashing</a></h1>
+<h2 id="the-double-standard"><a class="header" href="#the-double-standard">The Double Standard</a></h2>
+<p>Here's a small thought experiment worth running.</p>
+<p>Imagine someone spending six hours a day, every day, in a dark room, feeding coins into a slot machine. Most people would recognize that instantly as a crisis. Family would intervene. Friends would express concern. Nobody would shrug and say, "well, at least it's a quiet hobby."</p>
+<p>Now imagine someone spending those same six hours a day, in a similarly dark room, scrolling through a dimmed phone screen, chapter after chapter of a serialized web novel. What do we call that person? Usually something like "a bookworm." Someone who "just really loves stories." Maybe even, with a note of admiration, "always got their nose in something."</p>
+<p>Same six hours. Same isolation. Often the same underlying restlessness driving the behavior. And yet one gets treated as an emergency, and the other gets treated as a charming personality trait.</p>
+<p>That gap is worth sitting with, because it's not describing reality. It's describing a belief about reality — one that's been installed in nearly all of us since childhood, long before we had any say in the matter. And that belief is the actual subject of this chapter.</p>
+<h2 id="the-big-monster"><a class="header" href="#the-big-monster">The Big Monster</a></h2>
+<p>In the last chapter, we met the Little Monster — the small, mechanical craving loop that wants its regular dose of narrative stimulation. It's worth repeating something important about it: on its own, the Little Monster is weak. Genuinely weak. Left alone for a few days, it fades to almost nothing.</p>
+<p>So here's the puzzle. If the physical itch is that weak, why does quitting feel like facing something enormous?</p>
+<p>The answer is that the itch was never the hard part. What makes it feel overwhelming is something much bigger sitting on top of it — a dense, tangled collection of beliefs running quietly in the background of your mind, convincing you that giving in to the itch isn't just easy, but necessary. This book will call that collection of beliefs the Big Monster. And unlike the Little Monster, the Big Monster doesn't fade on its own. It has to be seen clearly, piece by piece, before it loses its grip. That's what the rest of this chapter — and much of Part III — is for.</p>
+<h2 id="the-mechanics-of-conditioning"><a class="header" href="#the-mechanics-of-conditioning">The Mechanics of Conditioning</a></h2>
+<p>The Big Monster is built out of two separate processes, working together. It helps to look at them one at a time.</p>
+<p><strong>Cultural conditioning</strong> starts long before you ever picked up your first novel or opened your first manga. From early childhood, most of us are taught, directly and indirectly, that reading is inherently superior — a mark of intelligence, discipline, even virtue. Screens got the warnings. Books got the gold stars. And because that lesson arrived so early, and from so many directions at once, it settled in beneath conscious thought, as a kind of background assumption: reading is good, full stop, regardless of why or how much of it you're doing. That assumption gives compulsive fiction a permanent pass that almost no other habit receives. It hides in plain sight, wearing the halo it was handed in first grade.</p>
+<p><strong>Self-conditioning</strong> is quieter, and entirely personal. It happens one small moment at a time, and it's worth being specific about how. Every time you've reached for a story to get through a bad day — every time you've opened an app instead of sitting with loneliness, or boredom, or a difficult feeling you didn't want to face directly — you weren't just relieving a moment of discomfort. You were writing a line of code into your own expectations: <em>I cannot handle this feeling without fiction.</em> Do that hundreds of times, across years, and that line of code stops feeling like a belief you hold. It starts feeling like a fact about who you are.</p>
+<p>Between the two — the cultural halo that protects the habit from scrutiny, and the personal conditioning that ties it to your ability to cope — you end up with something that feels less like a preference and more like a load-bearing wall in your life. That feeling is real. But it's worth remembering: a wall built from beliefs can be taken down the same way it was built. One honest look at a time.</p>
+<h2 id="resolving-the-conflict"><a class="header" href="#resolving-the-conflict">Resolving the Conflict</a></h2>
+<p>This explains something you've probably felt many times, and possibly blamed yourself for.</p>
+<p>There's a part of you — the rational part, the one reading this book right now — that can see, quite clearly, what the habit is costing you. The lost hours. The fog the next morning. The project still not started. That part knows something is wrong.</p>
+<p>And there's another part of you, running on the conditioning we just described, that genuinely believes fiction is what's keeping you stable. Not just enjoyable — necessary. The thing standing between you and falling apart.</p>
+<p>Those two beliefs can't both be fully true at the same time, and holding both of them at once produces exactly the kind of tense, uncomfortable friction you've probably felt every time you've tried to cut back. That friction isn't a sign of weak character. It's just what cognitive conflict feels like from the inside. And here's the useful part: it resolves itself the instant you discover that the second belief — fiction is keeping me sane — was never actually true to begin with. It only felt true because it had never been examined directly. Once it's examined, in the chapters ahead, the conflict has nothing left to run on.</p>
+<h2 id="the-tinted-glasses"><a class="header" href="#the-tinted-glasses">The Tinted Glasses</a></h2>
+<p>Here's a picture worth holding onto, because it explains exactly how this kind of conditioning distorts perception without you ever noticing it happening.</p>
+<p>Imagine wearing a pair of dark blue tinted glasses for ten straight years. Not for an afternoon — for a decade, every waking hour, until you genuinely forget you're wearing them at all. After that much time, the tint isn't something you perceive anymore. It's just what the world looks like to you. Cold. Slightly dim. A little washed out. You'd assume that's simply the nature of reality — not a filter you're looking through, but the actual color of things.</p>
+<p>Now imagine someone asks you to step outside without the glasses. What would you feel? Probably hesitation. Maybe even something like dread — a sense that stepping into unfiltered daylight would be harsh, too bright, unwelcoming. You might genuinely believe the naked world is a colder, harsher place than the one you've been looking at for ten years.</p>
+<p>But of course, it isn't. The world was never dim. The glasses were dim. And the fear of stepping outside without them was never really a fear of reality — it was a fear of an illusion the glasses themselves created.</p>
+<p>This is precisely what long-term conditioning does to your sense of ordinary life. Years of using fiction to color every quiet moment, every dull stretch of afternoon, every uncomfortable silence, leaves you genuinely believing that real life — unfiltered, undramatized, un-narrated — is boring or harsh by nature. It isn't. That belief is the tint on the glasses, not a fact about the world underneath them. And taking the glasses off was never going to require courage. It only requires noticing, clearly, that they were there in the first place.</p>
+<h2 id="the-defensive-reflex"><a class="header" href="#the-defensive-reflex">The Defensive Reflex</a></h2>
+<p>Here's where this shows up in daily life, often faster than you can consciously catch it.</p>
+<p>Someone close to you — a partner, a parent, a friend — asks, gently, how long you've been reading tonight. And before you've even finished processing the question, something in you flares up. A flash of irritation, maybe defensiveness, sometimes even a small surge of something close to anger, entirely out of proportion to how mild the question actually was.</p>
+<p>Then come the justifications, assembled almost instantly, as if they'd been sitting ready in a drawer: <em>I've had a stressful week. I deserve this. At least it's not drugs. At least it's not worse.</em> Notice how fast and how fluent those defenses are. That fluency is a clue. You don't need to rehearse a defense for something you don't secretly suspect needs defending.</p>
+<h2 id="the-unwinding-ritual"><a class="header" href="#the-unwinding-ritual">The "Unwinding" Ritual</a></h2>
+<p>Here's another shape this takes, one that feels less like defensiveness and more like genuine belief.</p>
+<p>After a demanding day, you tell yourself, quite sincerely, that your brain needs this. That without two hours of scrolling before bed, the accumulated stress of the day will simply have nowhere to go — that you'll lie awake wired and unable to settle without the numbing.</p>
+<p>It's worth asking, honestly and without judgment: is that actually true? Or is it true only because, for years now, you've never once given your mind the chance to unwind any other way? A muscle that's only ever been stretched one direction will feel like it can't bend the other way — not because it's incapable, but because it's never been asked to try.</p>
+<h2 id="the-micro-escape-pipeline"><a class="header" href="#the-micro-escape-pipeline">The Micro-Escape Pipeline</a></h2>
+<p>And here's the smallest, most automatic version of all — so small it barely registers as a decision at all.</p>
+<p>Standing in line at the grocery store. Waiting for an elevator. Stopped at a red light. Fifteen seconds, maybe twenty, of genuinely empty time. And the phone comes out, almost on its own, for two paragraphs of something, anything, rather than let those fifteen seconds simply pass unfilled.</p>
+<p>What's actually being avoided there isn't boredom in any meaningful sense. It's the bare experience of an unstimulated mind — something every human being used to tolerate constantly, for their entire life, without any distress at all. The belief that fifteen seconds of quiet is unbearable isn't a fact about human nature. It's a belief the conditioning installed, one red light at a time.</p>
+<p><strong>Here's the idea to carry forward.</strong> You don't rely on fiction because it's maintaining your emotional balance. Your balance felt disturbed in the first place because fiction, over time, made ordinary reality feel inadequate by comparison — dimmer, slower, less vivid than the version of life playing out on the screen. Remove the illusion, and you don't lose your footing. Reality regains its warmth, because it was never actually cold. You were just looking at it through tinted glass.</p>
+<p>Now that we can see how the overall conditioning operates — the cultural halo, the self-written code, the tinted glasses distorting ordinary life — we're ready to do something more specific and more useful. We're going to take the Big Monster apart belief by belief, starting with its most common and most convincing disguises: <em>"it helps me handle stress"</em> and <em>"it cures my boredom."</em> Those are the two arguments you've probably leaned on most, and they're exactly where we'll start in the next chapter.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="04.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="06.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="04.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="06.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

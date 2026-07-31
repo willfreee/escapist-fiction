@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The Trap of Cutting Down - The Easy Way to Quit Escapist Fiction</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Easy Way to Quit Escapist Fiction</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction/edit/main/src/src/12.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="chapter-12-the-trap-of-cutting-down"><a class="header" href="#chapter-12-the-trap-of-cutting-down">Chapter 12: The Trap of Cutting Down</a></h1>
+<h2 id="the-precious-single-chapter"><a class="header" href="#the-precious-single-chapter">The Precious Single Chapter</a></h2>
+<p>Here's something worth noticing the moment you try the "reasonable" approach to quitting.</p>
+<p>You set a rule for yourself: one chapter a night, before bed, nothing more. Reasonable. Balanced. The kind of rule a mature person makes. And then something curious happens. That single, permitted chapter suddenly feels ten times more exciting than any individual chapter did back when you were reading fifty a day without a second thought.</p>
+<p>That's strange, if you think about it. The chapter itself hasn't changed. Same prose, same plot, same author. And yet under the rule, it feels charged with a kind of significance it never had before — precious, anticipated, almost sacred. Why would restricting something make it feel more valuable rather than less?</p>
+<p>Here's the premise worth sitting with for the rest of this chapter: moderation isn't a gentle, sensible stepping stone toward freedom, the way it's usually sold. It's a mechanism that actively inflates the emotional value of the very thing you're trying to let go of — which means cutting down doesn't loosen the habit's grip. It tightens it.</p>
+<h2 id="the-artificial-scarcity-premium"><a class="header" href="#the-artificial-scarcity-premium">The Artificial Scarcity Premium</a></h2>
+<p>Here's the mechanism behind that inflated feeling, and it's worth understanding clearly.</p>
+<p>When something is unlimited, your brain naturally stops treating it as precious. This is exactly why, if you're honest, you often feel a flicker of boredom somewhere around chapter thirty of a fifty-chapter binge — the endless supply itself drains the urgency out of each individual chapter. Abundance, ironically, is what makes the habit start to feel hollow from the inside.</p>
+<p>The moment you introduce rationing, you reverse that entirely. Your brain doesn't measure value by quality. It measures value, in large part, by scarcity — and a strictly limited, tightly rationed chapter registers as rare, which your mind mistakes for important. A perfectly mediocre piece of serialized prose, capped at one chapter a night, can end up feeling like a genuine reward, purely because of the artificial fence you built around it. You didn't make the story better. You made it scarce, and scarcity did the rest.</p>
+<h2 id="the-anticipation-tax"><a class="header" href="#the-anticipation-tax">The Anticipation Tax</a></h2>
+<p>Here's a second cost, less obvious but arguably worse than the first.</p>
+<p>Under a rationing system, your relationship to the habit shifts from occasional consumption to near-constant anticipation. Instead of reading when you feel like it and moving on with your day, your whole day organizes itself around the countdown to your permitted window. You think about it at breakfast. You glance at the clock during a meeting, counting down the hours. The reading itself might only take twenty minutes, but the <em>waiting</em> for it occupies far more of your actual mental space than the old, unrestricted habit ever did.</p>
+<p>That's the opposite of freedom. You haven't shrunk the habit's footprint in your life. You've stretched it across every hour of the day, disguised as restraint.</p>
+<h2 id="the-friction-of-perpetual-negotiation"><a class="header" href="#the-friction-of-perpetual-negotiation">The Friction of Perpetual Negotiation</a></h2>
+<p>Here's a third cost, and it's purely a matter of mental math.</p>
+<p>Deciding to stop entirely requires exactly one decision. You make it once, and from that point forward, there's nothing left to negotiate. Moderation requires the opposite: hundreds of small decisions, every single day, forever. Does a short bonus chapter count toward today's limit? Can unused minutes roll over from yesterday? What if it ends on a cliffhanger — surely that deserves one more paragraph?</p>
+<p>Each of these micro-negotiations draws on the same limited pool of mental energy we discussed in the last chapter — the finite battery of self-control that depletes over the course of a day. Under abstinence, that battery isn't touched at all, because there's no decision left to make. Under moderation, it's drawn down constantly, dozens of times daily, until eventually — usually by evening — there's nothing left to resist the very negotiation you've been having with yourself since breakfast.</p>
+<h2 id="the-misunderstanding-of-escape"><a class="header" href="#the-misunderstanding-of-escape">The Misunderstanding of Escape</a></h2>
+<p>Here's the deepest flaw in the whole strategy, and it goes back to something we examined in Chapter 5.</p>
+<p>If some part of you still genuinely believes that reality is cold, dull, or unbearable, and that fiction is the warm shelter protecting you from it, then rationing your time in that shelter doesn't solve anything. It just guarantees you spend the vast majority of your day — the part outside your permitted window — feeling deliberately, deprived-ly cold, waiting for the brief window when you're allowed back inside. You cannot comfortably moderate an escape hatch you still believe you need. Moderating it just means living most of your life in the very discomfort the escape hatch was supposed to be protecting you from.</p>
+<h2 id="the-stray-animal-on-the-porch"><a class="header" href="#the-stray-animal-on-the-porch">The Stray Animal on the Porch</a></h2>
+<p>Here's a picture worth holding onto, because it captures this mechanism precisely.</p>
+<p>Imagine a stray animal that occasionally wanders by your porch. If you never feed it at all, it eventually stops coming around, moves on, learns to find real food elsewhere. Its attention returns to its actual life.</p>
+<p>Now imagine, instead, you give it one small crumb every day, at exactly 5:00 PM. Just a crumb — barely anything, by any reasonable measure. But watch what happens to that animal's behavior. It won't wander off to hunt anymore. It will sit on your porch, staring at the door, for twenty-three hours and fifty-nine minutes a day, entirely organized around the one minute when the crumb arrives. The tiny ration didn't reduce its dependency. It anchored the dependency permanently to your doorstep.</p>
+<p>That's exactly what a daily "allowed chapter" does to the craving in your own mind. It doesn't starve the craving into fading away. It feeds it just enough, on a fixed schedule, to keep it sitting at your door indefinitely, waiting.</p>
+<h2 id="the-anxiety-riddled-timer"><a class="header" href="#the-anxiety-riddled-timer">The Anxiety-Riddled Timer</a></h2>
+<p>You may recognize this one directly. You set a twenty-minute timer for lunchtime reading, a sensible-sounding boundary. And instead of enjoying those twenty minutes, you spend half of them glancing anxiously at how much time remains, and the other half feeling a flash of irritation and loss the instant the alarm goes off — cheated out of something, even though you set the exact terms of the deal yourself.</p>
+<h2 id="the-weekend-dam-burst"><a class="header" href="#the-weekend-dam-burst">The Weekend Dam Burst</a></h2>
+<p>Or this one: white-knuckling a strict "one chapter a day" rule from Monday through Thursday, tension quietly building with every day of restraint, until Friday night arrives and the dam simply gives way — a fourteen-hour uninterrupted binge that erases the entire week's discipline in a single night. The rule didn't prevent the binge. It just delayed it, and pressurized it in the meantime.</p>
+<h2 id="the-legal-loophole-bureaucracy"><a class="header" href="#the-legal-loophole-bureaucracy">The Legal Loophole Bureaucracy</a></h2>
+<p>And finally, this one: entire afternoons spent drafting increasingly specific personal rules — only completed series, only on an e-ink device, never past 10 PM — followed by equally elaborate hours spent finding exceptions to your own legislation, acting as both the earnest lawmaker and the corrupt lawyer arguing the loophole. That's an enormous amount of mental energy, spent entirely on managing a habit you're simultaneously trying to reduce.</p>
+<p><strong>Moderation doesn't tame the habit. It crowns it.</strong> Quitting completely requires exactly one decision and no ongoing negotiation. Cutting down requires an endless trial, held fresh every single day, where you're stuck playing both the prisoner and the guard — and the guard, as we saw in the last chapter, gets tired eventually. Every time.</p>
+<p>Once you see that cutting down is really just a slower, more exhausting form of the same struggle, the next temptation usually shows up in disguise: not fewer stories, but a different escape hatch entirely — swapping web novels for anime, gaming, or endless short-form video, telling yourself that at least it's a change. In the next chapter, we'll look closely at why trading one escape for another leaves the underlying trap completely intact.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="11.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="13.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="11.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="13.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

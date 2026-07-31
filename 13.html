@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>&quot;Just One More Chapter&quot; (or Episode) - The Easy Way to Quit Escapist Fiction</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Easy Way to Quit Escapist Fiction</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction/edit/main/src/src/13.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="chapter-13-just-one-more-chapter-or-episode"><a class="header" href="#chapter-13-just-one-more-chapter-or-episode">Chapter 13: "Just One More Chapter" (or Episode)</a></h1>
+<h2 id="the-broken-bargain"><a class="header" href="#the-broken-bargain">The Broken Bargain</a></h2>
+<p>You've made this exact deal with yourself more times than you can count, and it always follows the same script.</p>
+<p><em>I'll stop at the end of this fight. I'll close the app once this arc wraps up.</em> You mean it, genuinely, in the moment you say it. And then the fight ends, or the arc wraps up, and something strange happens — your thumb has already tapped "Next Chapter" before the rational part of your mind has even finished processing that the moment you were waiting for just arrived.</p>
+<p>That's worth pausing on, because it isn't really a failure of resolve. It's something closer to a reflex, faster than the decision it's supposed to be following. So here's the honest question: why do you keep believing the <em>next</em> chapter will finally deliver the sense of closure that the last fifty didn't? At what point does it become worth asking whether closure was ever actually on offer.</p>
+<p>Here's the premise this chapter is built around: "just one more" was never a real choice to enjoy a little more content. It's an engineered mechanism, built specifically to make sure you never arrive at a moment that feels finished.</p>
+<h2 id="the-architecture-of-serialized-retention"><a class="header" href="#the-architecture-of-serialized-retention">The Architecture of Serialized Retention</a></h2>
+<p>This isn't an accident of storytelling, and it isn't a coincidence that it happens to you specifically. Modern serialized fiction — web novels, webtoons, episodic anime — is structurally built the way a slot machine is built. Not to resolve tension at regular intervals, but to introduce a <em>new</em> open loop at precisely the moment your attention might otherwise start to drift.</p>
+<p>Look at where chapter breaks actually fall. Almost never at a point of calm. Almost always at a reveal, a threat, a question left dangling in the final panel or paragraph. That's not artistic accident. It's structural design, tuned over years of serialized publishing to keep exactly one thing true at every possible stopping point: there's always one more open question sitting right where the "natural" pause would have been.</p>
+<h2 id="the-receding-horizon-paradox"><a class="header" href="#the-receding-horizon-paradox">The Receding Horizon Paradox</a></h2>
+<p>Here's why searching for a natural stopping point inside this kind of story is a losing strategy from the start.</p>
+<p>You tell yourself you're reading toward some state of rest — a point where the story settles down enough that you can put it away with a clear conscience. But because serialized fiction is engineered to continuously generate new stakes precisely as old ones resolve, hunting for that stopping point is a bit like walking toward the horizon. It looks close. It always looks close. And yet no matter how far you walk, it recedes at exactly the same speed you're moving toward it, because it was never a fixed destination in the first place. It's a boundary that exists specifically to stay just out of reach.</p>
+<h2 id="the-illusion-of-closure"><a class="header" href="#the-illusion-of-closure">The Illusion of Closure</a></h2>
+<p>Here's the deeper point underneath all of this, worth stating directly: true psychological closure was never going to come from consuming more of something engineered to keep generating tension. Consumption, in this loop, doesn't settle your mental state. It maintains the exact agitation that makes you want to keep consuming. The two aren't opposites working against each other. They're the same mechanism, running in a circle.</p>
+<h2 id="the-mechanical-tape-measure"><a class="header" href="#the-mechanical-tape-measure">The Mechanical Tape Measure</a></h2>
+<p>Here's a picture worth holding onto, because it makes the mechanism obvious.</p>
+<p>Imagine pulling a retractable metal tape measure out of its case, one inch at a time, hoping to eventually reach the end of the tape and set it down satisfied. But a tape measure isn't built to be unspooled to a natural stopping point. It's wound onto an internal wheel, designed to keep extending for as long as you keep pulling. There's no moment where the tape says "that's enough, you've reached the end, you can stop now." The only way the pulling actually stops is if you release your grip. Not because the tape ran out. Because you let go.</p>
+<p>Serialized fiction works exactly the same way. There's no chapter waiting at the end that will hand you permission to stop. The stopping was never going to come from the story. It only ever comes from you, releasing your own grip — which means every night you spend searching for the "right place to stop" inside the story itself is a night spent looking in the wrong location entirely.</p>
+<h2 id="the-midnight-arc-negotiation"><a class="header" href="#the-midnight-arc-negotiation">The Midnight Arc Negotiation</a></h2>
+<p>You'll likely recognize this scene directly, because it's played out in some form on a hundred different nights. It's 2 AM. You've reached the end of a hundred-chapter arc, the main boss finally defeated, the tension you've been following for weeks finally resolved. You promise yourself: now I'll sleep.</p>
+<p>And then the final panel reveals a new villain, or a hint of a bigger threat looming just past the horizon, and Chapter 101 is open before you've had time to remember the promise you made thirty seconds earlier. That's not a failure of willpower. That's the architecture working exactly as it was built to work.</p>
+<h2 id="the-frantic-speed-read"><a class="header" href="#the-frantic-speed-read">The Frantic Speed-Read</a></h2>
+<p>Or this version, which might be even more revealing: 3 AM, skimming prose at a pace that has nothing to do with enjoying it. Not savoring the dialogue, not appreciating the style — frantically scanning ahead, searching for a lull, a quiet stretch of plot calm enough that your nervous system will finally feel safe enough to put the screen down.</p>
+<p>Notice what that behavior actually confirms. If you were genuinely enjoying the craft of the writing, you wouldn't be racing through it, trying to get past it as fast as possible. You'd be reading it because you're stuck — trying to get to relief, not to pleasure.</p>
+<h2 id="the-post-resolution-relapse"><a class="header" href="#the-post-resolution-relapse">The Post-Resolution Relapse</a></h2>
+<p>And this one, maybe the clearest evidence of all: you finally reach a quiet filler chapter, low on tension, and feel a genuine wave of relief — <em>finally, a place to stop.</em> And then you click to the next chapter anyway, not because anything is pulling you forward this time, but out of sheer momentum. The habit doesn't need a hook anymore at that point. It's simply running on its own, independent of whatever's actually happening in the story.</p>
+<p><strong>You will never find a natural stopping point inside a medium that's built specifically never to provide one.</strong> That was never where closure was going to come from. Closure isn't something the next chapter hands you as a reward for reading far enough. It's something you claim yourself, the moment you set the screen down — available to you at any point, not just the point the story pretends to offer you.</p>
+<p>Once you see clearly that the loop itself is the trap, and not any particular story inside it, the next instinct many people reach for is to swap the medium — trading web novels for manga, or manga for gaming, or gaming for an endless scroll of video essays, telling themselves that at least it's something different. In the next chapter, we'll look closely at why changing the container leaves the trap completely untouched.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="12.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="14.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="12.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="14.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

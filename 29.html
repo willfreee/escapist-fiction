@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Frequently Asked Questions - The Easy Way to Quit Escapist Fiction</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Easy Way to Quit Escapist Fiction</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction/edit/main/src/src/29.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="chapter-29-frequently-asked-questions"><a class="header" href="#chapter-29-frequently-asked-questions">Chapter 29: Frequently Asked Questions</a></h1>
+<h2 id="the-minds-last-draft"><a class="header" href="#the-minds-last-draft">The Mind's Last Draft</a></h2>
+<p>Even after everything we've covered — even after the final session in the last chapter, even after watching the mechanism dismantle itself in real time — the mind has a habit of doing one more thing before it fully settles. It starts drafting edge cases.</p>
+<p><em>What if I'm stuck in bed sick for three days with nothing else to do? What if my best friend writes a novel and asks me to read it? What if I'm on an eight-hour flight with no wifi and nothing else to occupy my mind?</em></p>
+<p>Here's the question worth asking about these scenarios: why would a rare, hypothetical situation somehow undo the plain, thoroughly examined truth that you're better off living directly in reality? None of these edge cases are actually arguing against anything we've established. They're just testing whether the door is really as open as it looks, poking at it from different angles to see if any of them still swing.</p>
+<p>Here's the premise this chapter rests on. These questions aren't evidence that quitting is more complicated than it seemed. They're simply the last quiet echoes of the trap, looking for one small, customized exemption — a special case where the old rules might still apply.</p>
+<h2 id="the-unified-engine-of-edge-cases"><a class="header" href="#the-unified-engine-of-edge-cases">The Unified Engine of Edge Cases</a></h2>
+<p>Here's something useful to notice about every single one of these "what about" questions, no matter how different they sound on the surface. Sick days, long flights, a friend's manuscript, social pressure — strip away the specific setting, and every one of them is asking the exact same underlying question: <em>is there a situation where narrative anesthesia is genuinely necessary again?</em></p>
+<p>We spent this entire book answering that question directly, chapter after chapter, and the answer never changed depending on the setting. The situation doesn't alter the mechanism. A cliffhanger read from a hospital bed still functions exactly like a cliffhanger read from your couch. The variety of hypotheticals is really just one question, wearing a dozen different outfits.</p>
+<h2 id="principles-over-rules"><a class="header" href="#principles-over-rules">Principles Over Rules</a></h2>
+<p>Here's the more useful way to hold all of this going forward. You don't need a memorized list of banned formats, banned platforms, or banned situations. Rigid rules like that are brittle — they crack the moment a new edge case shows up that the list didn't anticipate.</p>
+<p>What actually holds is a single, simple question you can apply to literally anything: <em>am I making a deliberate, conscious choice right now, or am I reaching for an emotional crutch?</em> That question travels with you everywhere. It doesn't need updating every time a new hypothetical shows up, because it isn't a rule about specific content. It's a check on your own state of mind, and that check works the same way in a hospital bed, on an airplane, or standing in front of a friend's manuscript.</p>
+<h3 id="291-the-freedom-checklist"><a class="header" href="#291-the-freedom-checklist">29.1 The Freedom Checklist</a></h3>
+<p>Here's a short, practical checklist worth keeping close, for exactly the moments when a doubt or an edge case tries to make itself heard:</p>
+<ol>
+<li><strong>Never envy people still caught in the loop.</strong> You've seen clearly what that loop actually costs. There's nothing there worth wanting back.</li>
+<li><strong>Never re-litigate the decision.</strong> You don't need to re-argue this every time a doubt shows up. The case was already made, thoroughly, and it still holds.</li>
+<li><strong>Recognize any lingering itch for exactly what it is.</strong> A harmless, fading reflex, nothing more, exactly as we described back in Chapter 22.</li>
+<li><strong>Don't test "casual reading" while things are still resetting.</strong> We covered this directly in Chapter 19 — a test isn't a neutral experiment while the circuit is still healing.</li>
+<li><strong>Trust that direct reality, even quiet or dull moments of it, beats synthetic distraction every time.</strong> That was the entire argument of this book, and it doesn't stop being true just because a particular Tuesday feels a little boring.</li>
+</ol>
+<h2 id="the-pilots-pre-flight-checklist"><a class="header" href="#the-pilots-pre-flight-checklist">The Pilot's Pre-Flight Checklist</a></h2>
+<p>Here's a picture worth holding onto, because it explains exactly what this checklist is for.</p>
+<p>A pilot, before takeoff, doesn't pause on the runway to re-derive the principles of aerodynamics, or question from scratch whether gravity is still going to behave the way it always has. All of that was settled long ago, thoroughly, by people who tested it exhaustively. Instead, the pilot runs a short, practical checklist — five or six points, quick to verify, designed simply to confirm that everything already known to be true still holds today.</p>
+<p>Your Freedom Checklist works the same way. When a minor doubt or an edge case shows up — a bit of turbulence, nothing more — you don't need to reopen the entire case from the beginning. You simply run the five points, confirm what you already know clearly, and keep flying.</p>
+<h2 id="the-flu--bedrest-trap"><a class="header" href="#the-flu--bedrest-trap">The Flu / Bedrest Trap</a></h2>
+<p>Here's a specific edge case worth addressing directly. You're sick, feverish, stuck in bed for days with nothing to do, and the thought arrives: surely this is the exception, surely 200 chapters is medically justified under these circumstances. But consider what actually promotes recovery — rest for your eyes, rest for your nervous system, genuine quiet rather than hours of narrative stimulation dressed up as convalescence. Being sick doesn't change the mechanism we spent Chapter 9 examining. If anything, a depleted body needs less synthetic stimulation, not more.</p>
+<h2 id="the-friends-story-obligation"><a class="header" href="#the-friends-story-obligation">The Friend's Story Obligation</a></h2>
+<p>Or this one: a close friend finishes writing something and asks you to read it. A flash of anxiety follows, as if agreeing means diving back into the exact loop you've just stepped out of. Notice the difference here, though — reading a specific piece, out of genuine care for a specific person, once, with a clear beginning and end, is nothing like the compulsive, endless loop this book has been addressing. A single, bounded act of support for someone you care about isn't the trap. The trap was always the open-ended, compulsive reach for narrative anesthesia — not the occasional, deliberate choice to read something specific, for a specific and genuinely good reason.</p>
+<h2 id="the-what-if-i-slip-panic"><a class="header" href="#the-what-if-i-slip-panic">The "What If I Slip?" Panic</a></h2>
+<p>And here's the one worth addressing most gently. Suppose, despite everything, a moment of exposure leads to three chapters read late one night. The dangerous part of that moment usually isn't the three chapters. It's the catastrophic thinking that tends to follow — <em>I've ruined everything, all of this was pointless, I'm back to square one.</em></p>
+<p>That reaction is worth examining directly, because it isn't accurate. Three chapters, seen clearly and without spiraling, is a minor, forgettable misstep — not evidence that the entire foundation collapsed. The response that actually matters isn't self-punishment. It's simply noticing what happened, running the checklist, and stepping back onto solid ground, the same ground that was there the whole time.</p>
+<p><strong>Absolute certainty was never about having a pre-written answer ready for every conceivable situation life might throw at you.</strong> It's the far simpler, far sturdier knowledge that whatever happens — illness, boredom, a long flight, an awkward request from a friend — you never actually need to numb your own mind to get through it. That was true before this book, and it stays true no matter what specific shape the next edge case happens to take.</p>
+<p>With every remaining doubt addressed and the checklist firmly in hand, you're holding the complete, permanent map to this clarity. What's left now is simply to step fully into the life waiting on the other side of it — which is exactly where we're headed next.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="28.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="30.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="28.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="30.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
