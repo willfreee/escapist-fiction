@@ -6,8 +6,6 @@ An open-source guide to breaking free from compulsive fiction consumption.
 
 The Easy Way to Quit Escapist Fiction applies the psychological principles of the Easyway/EasyPeasy method to break the habit of compulsive fiction consumption—including Manga, Manhwa, Light Novels, Webtoons, Anime, Fanfiction, and Story Recaps.
 
-This book is not an attack on fiction. Stories are a normal and healthy part of human culture. This book addresses the moment entertainment quietly turns into emotional dependence—using fictional worlds to run away from boredom, stress, anxiety, or reality.
-
 Read the chapters in order, and do not force yourself to quit reading fiction until you finish the book.
 
 ## Acknowledgments
