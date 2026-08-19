@@ -1,11 +1,13 @@
 # Summary
 
 # Part 1: Recognition
+
 - [Chapter 1: Keep Reading (Yes, Really)](./01.md)
 - [Chapter 2: This Isn't About Fiction](./02.md)
 - [Chapter 3: The Two Monsters](./03.md)
 
 # Part 2: Illusion-Dismantling
+
 - [Chapter 4: The Magic Trick](./04.md)
 - [Chapter 5: The Illusion of Relaxation](./05.md)
 - [Chapter 6: The Illusion of Pleasure](./06.md)
@@ -24,9 +26,11 @@
 - [Chapter 19: Why Moderation Keeps the Trap Alive](./19.md)
 
 # Part 3: Reframe
+
 - [Chapter 20: What's Actually Left](./20.md)
 - [Chapter 21: Why This Should Feel Exciting](./21.md)
 
 # Part 4: Liberation
+
 - [Chapter 22: Free Choice, For the First Time](./22.md)
 - [Chapter 23: The Last Chapter (The Closing Ritual)](./23.md)
