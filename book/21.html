@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chapter 21: Why This Should Feel Exciting - The Easy Way to Quit Escapist Fiction</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Easy Way to Quit Escapist Fiction</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction/edit/main/src/src/21.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="why-this-should-feel-exciting"><a class="header" href="#why-this-should-feel-exciting">Why This Should Feel Exciting</a></h1>
+<p>You're near the end of this book. And you might be feeling something unexpected.</p>
+<p>Not relief. Not clarity. Not the calm confidence of someone who's seen through the illusions and is ready to walk free. Something closer to anxiety. A tightness in your chest. A vague, diffuse unease that you can't quite pin down. A voice whispering at the edge of your awareness: <em>What if I'm not ready? What if I can't do this? What if life without fiction is worse than life with it? What if I regret this?</em></p>
+<p>The Parasite wants you to interpret that feeling as a warning. As evidence that you're about to make a mistake. As the voice of prudence, of wisdom, of healthy caution urging you not to do anything rash. <em>Don't rush</em>, it whispers. <em>Don't be hasty. Maybe finish this book, think about it for a while, see how you feel in a few weeks. You don't have to decide anything now. The fear means you're not ready. Wait.</em></p>
+<p>But what if the fear doesn't mean you're not ready? What if it means you're exactly where you're supposed to be?</p>
+<p>What if that tightness in your chest isn't a warning at all — but the feeling of a cage door swinging open, and you've been inside so long you forgot what open air felt like?</p>
+<p>Every prisoner feels fear the moment the cell door opens. It's not fear of the prison. The prison is familiar. The prison is known. The fear is of the open sky — the unfamiliar, the unknown, the terrifying responsibility of freedom. After years of being told where to stand, when to eat, when to sleep, the sudden absence of walls feels less like liberation and more like vertigo. The prisoner stands in the doorway, heart pounding, and a part of them — a part they're ashamed of — wants to step back inside. Not because the prison was good. Because it was known.</p>
+<p>That fear is not evidence that the prisoner should stay. It's evidence that the door is open and the prisoner is about to walk through it. It's not a signal of danger. It's a signal of threshold. The vertigo of imminent freedom.</p>
+<p>You've been in the Parasite's cage for years. The door is open. It's been opening, chapter by chapter, since the moment you started this book. The beliefs that built the walls — that fiction relaxes you, comforts you, gives you pleasure, provides meaning — have been dismantled one by one. The Parasite itself has been exposed, its voice recognized, its survival strategies laid bare. The door isn't just unlocked. It's gone. There's nothing between you and the open sky except the fear of stepping through.</p>
+<p>That fear is not a warning to stay. It's the vertigo of standing at the exit of a prison you've been in so long you forgot it was a prison. And vertigo passes. What's on the other side of it doesn't. The sky is still there, waiting, whether you step into it or not. The only question is how long you stand in the doorway, mistaking the fear of freedom for a reason to remain caged.</p>
+<p>The Parasite has one last story it wants you to believe. It's been telling it to you throughout this entire book, and it's telling it to you now, with particular urgency, as the end approaches.</p>
+<p>The story is that quitting is an ending. A loss. A funeral for the part of your life that involved stories. You're about to say goodbye — to the characters, the worlds, the comfort, the pleasure, the escape. You're about to close a door that will never open again. And it's going to hurt. You should be sad. You should be scared. You should be bracing yourself for the grief.</p>
+<p>This story is a lie. Not a misunderstanding. Not a helpful framing that's slightly inaccurate. A lie, told by the Parasite to make freedom feel like bereavement.</p>
+<p>You are not attending a funeral. You are walking out of a cage. The difference is not subtle. It's everything.</p>
+<p>You are losing exactly nothing of value. You are losing a parasite. An entity that gave you nothing and took everything. A houseguest who's been living in your home, eating your food, wearing your clothes, speaking in your voice, and convincing you the entire time that he was you.</p>
+<p>Would you attend a funeral for that houseguest? Would you mourn him? Would you stand at the door, tearful, asking him to stay just a little longer?</p>
+<p>Imagine someone who's been sick for years. A chronic, low-grade illness that drained their energy, muted their emotions, flattened their experience of the world. They forgot what it felt like to be well. They assumed the fatigue was just their personality, the brain fog just their natural state, the muted colors just how the world looked. Then they're cured. The illness is gone. The symptoms lift. The world, which had seemed gray, reveals itself to have been in color the whole time.</p>
+<p>Would they attend a funeral for the illness? Would they mourn the fatigue? Would they grieve the brain fog, the muted colors, the years spent operating at sixty percent? Or would they walk out of the doctor's office into a world that suddenly felt vivid and alive and worth being in, and feel — not grief, not loss, not fear — but the wild, electric, unstoppable relief of being free?</p>
+<p>The Parasite is the illness. You're not losing anything worth keeping. You're recovering something you forgot you had: the ability to experience your own life without a filter, without a drain, without a voice whispering that the only way to feel okay is to escape. The moment you're approaching is not an ending. It's a beginning. The only thing dying is the Parasite. And the Parasite's death is not a tragedy. It's a cure. The funeral is not yours to attend. It's the Parasite's. And you don't owe the Parasite your grief.</p>
+<p>There's a reason this is hard to feel, even when you understand it intellectually. You've been trained — by culture, by self-help narratives, by the entire Western mythology of self-improvement — to expect change to hurt. Real transformation is supposed to involve struggle. Sacrifice. White-knuckled endurance. The idea that quitting could feel exciting — joyful, even — seems almost transgressive. Naive. Like you're not taking it seriously enough. Like you're setting yourself up for disappointment.</p>
+<p>The Parasite loves this cultural script. It exploits it ruthlessly. <em>If you're excited, you're not being realistic. Real change is hard. Real change requires grit. If it feels good, you're doing it wrong. The fact that you're scared is proof that this is serious. The fact that you feel joy is proof that you're being naive. Be scared. Be solemn. Be grim. Brace yourself for the suffering to come.</em></p>
+<p>But this script is not wisdom. It's the Parasite's way of making freedom feel suspicious. If it can convince you that joy is inappropriate, that excitement is naive, that the only valid emotional register for this moment is grim determination — then it can keep you in the doorway forever, afraid to step through, because stepping through doesn't feel like you expected it to.</p>
+<p>When someone escapes a burning building, do they walk out slowly, solemnly, with a sense of grim duty? Do they pause in the doorway to reflect on the gravity of the moment? Or do they run — heart pounding, lungs gasping, flooded with the wild, electric, animal relief of being alive?</p>
+<p>The Parasite's cage has been burning for years. You just couldn't feel the heat because you'd adapted to it. The damage was happening slowly — the time lost, the attention drained, the relationships neglected, the life postponed — and you stopped noticing because noticing would have been too painful. Now you're at the exit. The door is open. The fire is behind you. The cool air is on your face.</p>
+<p>The appropriate response is not solemnity. It's exhilaration. You're not making a sacrifice. You're escaping a fire. You're not being brave or disciplined or admirably restrained. You're doing the thing any living creature does when the cage door opens: you're getting out. And getting out feels good. It's supposed to feel good. The joy is not a sign that you're doing it wrong. It's a sign that you're alive, and you're about to be more alive than you've been in years.</p>
+<p>Permission to feel excited — fully, unguardedly, unironically excited — is not naive. It's the only sane response to being free. You don't have to be grim. You don't have to be scared. You don't have to brace yourself for suffering that isn't coming. The suffering was the Parasite. The suffering was the cage. The suffering is behind you. What's ahead is open sky.</p>
+<p>There's one more thing the Parasite wants you to believe. It's the final whisper, the last card it has to play.</p>
+<p><em>Your best days are behind you. The richness of fiction is gone now. The worlds, the characters, the emotional depth, the endless possibility — all of it, gone. What's left is just... your life. Small. Ordinary. Limited. You're entering a period of deprivation, contraction, diminishment. The party's over. Now there's only silence.</em></p>
+<p>This is a lie. And it's not just any lie — it's the exact inverse of the truth.</p>
+<p>The Parasite was not expanding your experience. It was contracting it. It took all your time, all your attention, all your emotional capacity, all your appetite for experience — and it funneled them into a single, narrow, repetitive activity. Your world became the size of a screen. Your relationships became the size of fictional characters. Your emotional life became the size of borrowed catharses. Your ambitions became the size of vicarious achievements — watching someone else grow, someone else succeed, someone else live.</p>
+<p>That's not richness. That's poverty disguised as abundance. The Parasite was not a library. It was a single room — comfortable, familiar, endlessly decorated — and it convinced you that the room was the whole world.</p>
+<p>Quitting is not a contraction. It's an explosion outward.</p>
+<p>All the resources that were being funneled into that single room — the hours, the attention, the energy, the emotional capacity, the appetite — are now available for everything else. Every hour that used to go to fiction can now go to... anything. Every spark of attention that used to be absorbed by narrative can now be directed anywhere. Every ounce of emotional capacity that used to be spent on borrowed feelings can now be invested in your own. Every appetite — for connection, for creativity, for movement, for the simple, unengineered pleasures of being alive — is returning.</p>
+<p>The life you get to start now is not smaller. It's vast. The room you've been living in was inside a house. The house has many rooms. Windows. A garden. A sky. You've been in the single room so long you forgot the house was there. The door to the rest of the house has been open this whole time. You just couldn't see it from the chair where you were sitting.</p>
+<p>Escapist fiction was the room. Quitting is the door swinging wide. The life you get to start now is not a life of deprivation. It's a life where you finally get to explore the rest of the house. And the house, it turns out, is enormous. It was always enormous. You just couldn't see it from where the Parasite had you sitting.</p>
+<p>You are not entering a smaller life. You are finally entering the one you were always supposed to be living. The fear you feel is not a warning. It's the vertigo of standing at the threshold of something vast. The tightness in your chest is not dread. It's the physical sensation of a door that's been closed for years finally swinging open — and the rush of air that comes through it is not emptiness. It's oxygen. It's the smell of a world you forgot existed. It's the feeling of being alive, fully alive, for the first time in longer than you can remember.</p>
+<p>The door is open. The fire is behind you. The house is waiting. And you are ready to walk through. Not solemnly. Not grimly. Not braced for sacrifice. Excited. The way anyone would be, escaping a cage. The way anyone would be, finally coming home.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="20.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="22.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="20.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="22.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

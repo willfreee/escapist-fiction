@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chapter 2: This Isn&#x27;t About Fiction - The Easy Way to Quit Escapist Fiction</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Easy Way to Quit Escapist Fiction</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction/edit/main/src/src/02.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="this-isnt-about-fiction"><a class="header" href="#this-isnt-about-fiction">This Isn't About Fiction</a></h1>
+<p>Let me tell you what this book is not about.</p>
+<p>It is not about whether manga is a valid art form. It is not about whether webtoons are "real reading." It is not about whether anime is a waste of time or light novels are inferior to literary fiction. It is not about whether fanfiction is derivative or romance novels are formulaic or serialized storytelling is designed to exploit your attention. It is not about whether the stories you love are "good enough" to justify the hours you've given them.</p>
+<p>I have exactly zero interest in any of those arguments.</p>
+<p>Because the problem you're facing has nothing to do with what kind of stories you consume. It has everything to do with why you consume them and what happens when you do.</p>
+<p>And the sooner we separate those two things — the stories themselves from the pattern of turning to them — the sooner you'll understand why every previous attempt to "cut back" or "be more disciplined" collapsed the same way. You weren't fighting fiction. You were fighting something else entirely, but you didn't know what to call it, so you kept aiming at the wrong target.</p>
+<p>Let me show you what I mean.</p>
+<p>Think back to the last time you genuinely enjoyed a story. Not the last time you consumed one. The last time you really enjoyed it. Maybe it was a chapter of a webtoon you'd been anticipating all week. Maybe it was an episode of an anime that landed exactly right — beautiful animation, a moment that earned its emotional weight, the kind of scene that sits with you after the credits roll. You opened it because you wanted to. You were present while you experienced it. You closed it feeling something — satisfaction, appreciation, maybe even a quiet sense of having been nourished. And then you moved on with your day. The story didn't cling to you. It didn't demand a follow-up. It gave you something, and then it let you go.</p>
+<p>Now think about a different moment. Same you. Same phone or screen. Maybe even the same series. But this time it's 11 p.m. and you're tired in a way that goes past your body into something deeper — a draining day, a low-grade restlessness you can't name, a task you've been avoiding that's sitting in the back of your mind like a stone. You open the app. You read one chapter. Then another. Then a third. Somewhere in the middle of the fourth, you realize you're not really tasting any of it anymore. Your eyes are moving across the panels but the story has become background noise, a hum you're using to fill the silence. You keep scrolling. You're not even sure you're enjoying it, but stopping feels wrong in a way you can't explain. An hour passes. You close the app, and instead of satisfaction, there's a hollow feeling. Overstimulated but empty. You couldn't describe what happened in the last three chapters if someone asked. The whole experience has the texture of something you woke up from, not something you chose.</p>
+<p>Same person. Same app. Same series.</p>
+<p>So why did one experience feel like nourishment and the other feel like a numbing fog you drifted into?</p>
+<p>If the medium were the problem — if manga or webtoons or light novels were inherently harmful, inherently escapist — then both experiences would feel the same. The medium didn't change. The content didn't change. The variable wasn't what you consumed. It was the relationship you brought to it. In the first moment, you were a person choosing to enjoy a story. In the second, you were a person using a story to escape something you didn't want to feel.</p>
+<p>Those are not the same activity. They just look the same from the outside. And they've been hiding inside each other for so long — wearing the same clothes, opening on the same screen, taking place in the same chair — that you stopped being able to tell them apart.</p>
+<p>This book is not here to take away the first experience. It's here to free you from the second one.</p>
+<p>Somewhere along the way, you probably absorbed the idea that "escapist fiction" is a category — a shelf in the library, a genre label, a certain kind of story that's inherently more escapist than other kinds. The isekai power fantasies. The romance novels with guaranteed happy endings. The webtoons designed to hook you with cliffhangers every three panels. The fanfiction that lets you live inside a world someone else already built. It's easy to look at those and think, <em>That's the problem. That stuff is designed to be addictive. If I just switched to better content — literary fiction, classic novels, critically acclaimed anime — I wouldn't be trapped.</em></p>
+<p>Maybe you've tried this already. Maybe you've gone through phases where you deleted the "trashy" web novels and told yourself you'd only read "real books" from now on. Maybe you convinced yourself that reading Dostoevsky is somehow less escapist than reading fanfiction — only to find yourself bingeing <em>Crime and Punishment</em> the same way you binged isekai, because the behavior didn't change, only the wrapper. Maybe you told yourself anime was the problem and switched to live-action dramas, or told yourself serialized fiction was the problem and switched to standalone novels, only to repeat the same cycle in a different format, a different language, a different app.</p>
+<p>The content was never the variable. The pattern was.</p>
+<p>If someone drinks a bottle of wine because they love the taste — because it complements a meal, because they're sitting with friends and the conversation is flowing and the wine is part of something larger — and someone else drinks a bottle of wine because they can't face the morning without it, because the silence in their own head is too loud, because they need the escape more than they want the drink — is the wine the problem?</p>
+<p>No. The wine is neutral. It's fermented grapes in a glass. The problem is the relationship. The second drinker isn't drinking wine. They're using wine to escape. And you could swap the wine for whiskey, for beer, for anything in a bottle, and the pattern would remain identical. The substance isn't driving the behavior. The escape is.</p>
+<p>Escapist Fiction, as this book uses the term, is not a genre on a shelf. It is not a category you can filter out of your recommendations. It is the second drinker. It is a pattern of turning to stories not because you chose them freely, not because you were curious or engaged or genuinely hungry for that particular tale — but because you needed them to escape something else. Boredom. Stress. Anxiety. Loneliness. The discomfort of an unfinished task. The quiet that settles in when there's nothing to distract you. The feeling of your own life sitting there, waiting, asking something of you that you're not sure you can give.</p>
+<p>The pattern is the same whether you're reading a critically acclaimed literary masterpiece or the trashiest power fantasy on a web novel site. The pattern is the same whether you're watching a beautifully animated film or scrolling through story recap videos on fast-forward just to get the hit without even the effort of the story itself. The pattern is the same whether the medium is manga, anime, webtoons, light novels, fanfiction, or AI roleplay. When you're consuming to escape, the content is almost incidental. It's a vehicle. The destination isn't the story. The destination is somewhere other than here.</p>
+<p>That's what this book means by Escapist Fiction. Not a medium. Not a genre. Not a platform. A behavior. The repeated, compulsive use of fictional stories as a means of psychological escape rather than intentional enjoyment.</p>
+<p>And once you understand this, something important shifts. You don't have to defend fiction anymore. You don't have to brace yourself for a book that's going to tell you your favorite stories are poison, that the hours you spent immersed in imaginary worlds were wasted, that the characters you loved were just pixels and ink and you were a fool for caring about them.</p>
+<p>None of that is true. And none of that is what this book is going to say.</p>
+<p>The stories were never the problem. The imagination that fell in love with them was never the problem. The moments of genuine enjoyment — the chapter that made you gasp, the finale that made you cry, the line of dialogue you still think about years later — those were real. They happened. They mattered. This book isn't here to take those memories away from you or convince you they were secretly harmful.</p>
+<p>What this book is here to do is separate the enjoyment from the compulsion. The free choice from the automatic reach. The nourishment from the anesthetic.</p>
+<p>Because here's what I suspect you already know, somewhere beneath the defensiveness: you can feel the difference. You've felt it. The Saturday morning session where you read one chapter and closed the app feeling good, versus the 1 a.m. spiral where you read twelve chapters and closed the app feeling hollow. Those were not the same activity. Your body knew it. Your mind knew it. You just didn't have language for the distinction, so you lumped them both under "reading" or "watching" and tried to fix the whole thing at once — which meant you either had to condemn all of it or defend all of it. There was no middle ground.</p>
+<p>Now there is.</p>
+<p>Imagine someone who has never used food as an emotional crutch. They eat when they're hungry. They stop when they're full. They enjoy a good meal without guilt, without obsession, without the meal taking up mental real estate for hours afterward. Food is just food. It nourishes them and then it's done.</p>
+<p>Now imagine telling that person they have to give up food entirely because some people binge-eat.</p>
+<p>That would be absurd. The problem isn't food. The problem is the compulsive relationship to food. And the solution isn't to swear off eating forever. The solution is to remove the compulsion so that eating can return to what it was always supposed to be: a natural, enjoyable, self-limiting activity.</p>
+<p>Fiction is no different.</p>
+<p>The goal of this book is not to make you give up stories. The goal is to remove the compulsion — the escape pattern, the automatic reach, the having to — so that, if you choose to enjoy a story, you do it as a free person. Not as someone escaping. Not as someone numbing. Not as someone who can't stop. Just a person who occasionally reads a book or watches a show because they genuinely want to, and then stops because they're done, without drama, without emptiness, without the quiet voice whispering <em>one more chapter</em>.</p>
+<p>That's the destination. Not a life without fiction. A life without the need for fiction as an escape.</p>
+<p>Enjoyment is chosen. It's time-bound. It leaves you satisfied — maybe even full, in the best sense, the way a good meal leaves you full. Dependence is urgent. It's insatiable. It leaves you emptier than before, already reaching for the next thing before the current thing has even ended. One of these is a relationship with stories. The other is a relationship with escape that happens to use stories as its vehicle.</p>
+<p>This book is only interested in the second one.</p>
+<p>So you can stop defending fiction now. You can stop bracing for an attack that isn't coming. The stories you love are not on trial here. The pattern is. And the pattern has been hiding inside the stories for so long that you thought they were the same thing.</p>
+<p>They're not. And now that you can see the difference, we can start looking at what the pattern actually is — what it's made of, why it feels so powerful, and why everything you've tried to do about it so far has failed.</p>
+<p>That's where we're going next. Because if the problem isn't the stories, then what is it? What's actually keeping you trapped? What are you fighting when you try to stop and can't?</p>
+<p>The answer involves two monsters. And they're nothing like what you've been told.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="01.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="03.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="01.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="03.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

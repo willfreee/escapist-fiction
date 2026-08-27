@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chapter 4: The Magic Trick - The Easy Way to Quit Escapist Fiction</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Easy Way to Quit Escapist Fiction</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/willfreee/escapist-fiction/edit/main/src/src/04.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="the-magic-trick"><a class="header" href="#the-magic-trick">The Magic Trick</a></h1>
+<p>Have you ever watched a street magician work a crowd?</p>
+<p>The good ones don't just perform tricks. They create problems. You're standing there, minding your own business, and suddenly the magician points to your shirt. There's a stain on it. You didn't see how it got there. You were watching his other hand. But now everyone's looking, and you feel a flush of embarrassment, a small spike of panic. When did that happen? How did you not notice?</p>
+<p>Before the discomfort can settle in, the magician steps forward. He produces a cloth from nowhere. A flourish. A grin. He dabs at your shirt, and the stain vanishes. The crowd applauds. You feel a wave of relief wash through you — gratitude, even. The magician saved you from an embarrassing moment. You almost want to thank him.</p>
+<p>But who created the stain in the first place?</p>
+<p>The magician did. He placed it there while you were watching his other hand. The problem that felt like random misfortune — the stain that seemed to appear from nowhere — was manufactured from the start. And the relief you felt when he removed it wasn't evidence of his helpfulness. It was evidence of his skill at creating a problem and then taking credit for solving it.</p>
+<p>The entire exchange was a closed loop. The magician gave you nothing. He simply returned you to the state you were in before he approached you — minus the admiration and applause you're now directing his way. You're standing there feeling grateful for being rescued from a danger that never existed until he created it.</p>
+<p>This is not a chapter about street magicians.</p>
+<h3 id="the-stain-on-your-shirt"><a class="header" href="#the-stain-on-your-shirt">The Stain on Your Shirt</a></h3>
+<p>Think about the last time you felt a strong urge to escape into fiction. Not the casual desire to continue a story you were genuinely enjoying — but the pull. The need. The moment when closing the app felt unthinkable, when the thought of sitting with whatever you were feeling seemed worse than anything the screen could show you.</p>
+<p>Maybe you were stressed. Maybe you were bored. Maybe there was a task waiting for you that you didn't want to face, or a silence in the room that felt too heavy, or a low-grade restlessness you couldn't name that made your own thoughts feel like a room you needed to leave.</p>
+<p>And then you opened the app. You started reading. You started watching.</p>
+<p>And within minutes — sometimes within seconds — you felt better. The tightness in your chest eased. The restlessness quieted. The gap filled. The uncomfortable feeling that had been pressing on you faded into the background, replaced by the narrative, the characters, the world on the screen.</p>
+<p>You felt relief. Genuine, tangible relief. And your brain logged this experience as evidence: <em>See? Fiction helps. Fiction relaxes me. Fiction makes the bad feelings go away. I need this.</em></p>
+<p>That's the conclusion you've been carrying. It feels unshakable because it's built on direct, repeated, undeniable experience. You felt the discomfort. You reached for the story. The discomfort went away. What could be simpler?</p>
+<p>But let me ask you the same question the street magician asked, silently, with his hidden hand.</p>
+<p>Where did the discomfort come from?</p>
+<p>Not the surface-level answer. Not <em>I was stressed because of work</em> or <em>I was bored because there was nothing to do</em>. Go deeper. Where did the specific quality of that discomfort come from — the urgency, the need to escape, the feeling that the only solution was to open the app and disappear into a story?</p>
+<p>Because here's what I want you to consider. What if the magician placed the stain on your shirt?</p>
+<p>What if the same habit that provided the relief was the one that created the need for relief in the first place?</p>
+<h3 id="the-itch-you-scratch-until-it-bleeds"><a class="header" href="#the-itch-you-scratch-until-it-bleeds">The Itch You Scratch Until It Bleeds</a></h3>
+<p>Let's look at a quieter moment. You're not particularly stressed. Nothing especially bad has happened. It's just a normal day, and a gap opens up — ten minutes between tasks, a lull in the afternoon, a pocket of time with nothing urgent demanding your attention.</p>
+<p>And almost instantly, the urge appears.</p>
+<p><em>I should check for updates. I wonder if there's a new chapter. Let me just see what happens next.</em></p>
+<p>The urge feels like it comes from nowhere. It rises up, unbidden, and presents itself as a fact: <em>I want to read something.</em> But that want didn't emerge from a vacuum. It emerged from a brain that has been trained, over hundreds or thousands of repetitions, to associate gaps in stimulation with a specific solution. When there's a pause, we fill it with fiction. When there's quiet, we reach for a story. When there's nothing happening, we make something happen on the screen.</p>
+<p>The habit didn't just teach you to respond to boredom by opening an app. It taught your brain to experience boredom differently — as a problem that needs immediate solving, as an emergency that requires fiction. The gap itself, which might have felt neutral or even pleasant before the habit took hold, now feels uncomfortable. Wrong. Like something is missing.</p>
+<p>Think about a mosquito bite. The itch feels like an independent problem — something the mosquito caused, something the scratching solves. But what actually happens when you scratch? You get temporary relief, followed by a worse itch. The scratching irritates the skin, releases more histamine, and the itch returns stronger than before. If you keep scratching, the cycle continues. The itch you're feeling now isn't just the bite. It's the cumulative effect of all the scratching you've done.</p>
+<p>The scratching didn't solve the mosquito's damage. It added its own damage on top.</p>
+<p>Now think about the gaps in your day. The quiet moments. The pauses between tasks. Before the habit took hold, those moments might have felt neutral. They might have been a chance to breathe, to think, to simply exist without input. But now, after hundreds of times reaching for fiction to fill them, those moments feel charged. Restless. Almost unbearable without something to occupy your attention. The gap itself has become uncomfortable — not because gaps are inherently uncomfortable, but because you've scratched the gap so many times that the skin is raw.</p>
+<p>The urge you feel in quiet moments isn't a natural, independent discomfort that fiction generously relieves. It's a discomfort the habit itself has trained into your brain. The magician picked your pocket, and now he's standing there with your wallet in his hand, offering to sell it back to you — and you feel grateful for the transaction.</p>
+<h3 id="the-loop"><a class="header" href="#the-loop">The Loop</a></h3>
+<p>Let's slow this down further. Let's walk through the full cycle step by step, because seeing it in motion is different from understanding it in theory.</p>
+<p>You're sitting at your desk, or on your couch, or in your bed. There's something you could be doing — a task, a conversation, a moment of genuine rest. But a flicker of discomfort rises. Maybe it's boredom. Maybe it's the low-grade anxiety of an unfinished obligation. Maybe it's just the quiet itself, which has started to feel heavy.</p>
+<p>Your hand moves toward your phone. You might not even notice the decision happening. The phone is in your hand, the app is open, the story is loading. You're already inside.</p>
+<p>And then — relief.</p>
+<p>Within moments, sometimes within seconds, the discomfort fades. The narrative pulls you in. The characters take over your attention. The world on the screen becomes more vivid than the room around you. Your shoulders drop. Your breathing slows. The tightness eases. You feel better.</p>
+<p>Your brain logs this sequence carefully: <em>Discomfort appeared. I opened the app. Discomfort disappeared. Therefore, fiction solved the discomfort.</em></p>
+<p>This is the critical moment. This is where the Magic Trick does its work. Because the brain is very good at noticing correlations — <em>discomfort, then fiction, then relief</em> — and very bad at questioning whether the relief is what it appears to be. The sequence feels like cause and effect. Fiction caused the relief. Fiction is the solution.</p>
+<p>But now let the story end. Or let your attention fade. Or let the guilt of time passing pull you back to the surface. You close the app. You look up.</p>
+<p>And the original discomfort is still there.</p>
+<p>The task you were avoiding hasn't completed itself. The stress you were escaping hasn't been processed or resolved. The boredom you were fleeing hasn't been transformed into something meaningful. It was just waiting. Patiently. Exactly where you left it.</p>
+<p>Often, it's worse. The discomfort has been joined by new companions: guilt about the time you just spent, frustration that you didn't do what you intended to do, a vague sense of having let yourself down. The stress that was a five before you opened the app is now a six or a seven. The boredom has curdled into something heavier — a hollow, overstimulated emptiness that feels worse than the original boredom ever did.</p>
+<p>So what exactly was the relief? Relief from what?</p>
+<p>Look at the cycle carefully. The discomfort appeared. You escaped into fiction. The discomfort was temporarily muted — not removed, not resolved, not processed, just pushed out of awareness by a more compelling stimulus. Then the escape ended, and the discomfort returned, often amplified. The only thing that changed during the escape was your awareness of the discomfort. The discomfort itself remained untouched, like a pile of unopened mail sitting on the table while you watched a movie in the next room.</p>
+<p>The escape didn't remove the problem. It removed you.</p>
+<p>And when you came back, the problem was waiting exactly where you left it.</p>
+<p>So what was the "relief" you felt? It wasn't relief from the stress. It was relief from the awareness of the stress — a temporary muting, a volume knob turned down, a blindfold pulled over your eyes. The magician didn't clean the stain on your shirt. He just made you look away from it, and while you were looking away, the stain was still there, and the crowd was still watching, and nothing had changed except your perception.</p>
+<h3 id="the-test"><a class="header" href="#the-test">The Test</a></h3>
+<p>At this point, you might be thinking something like this: <em>But the relief feels real. I know what I feel. When I'm stressed and I open a webtoon, I feel better. That's not a theory. That's not an illusion. That's a fact. I experience it every single time.</em></p>
+<p>And you're right. The feeling is real. The sensation of relief — the easing of tension, the quieting of restlessness, the absorption into the story — happens. I'm not asking you to deny your own experience. I'm asking you to look more closely at what that experience actually is.</p>
+<p>There's a simple test. It will tell you whether the relief you feel is genuine — whether fiction actually solves the problem — or whether it's a temporary muting of awareness that the habit then takes credit for.</p>
+<p>Imagine you have a headache. A real one. Throbbing behind your eyes. You take a pill. Ten minutes later, the headache is gone. Not just hidden, not just distracted from — gone. And it stays gone. The pill addressed the cause. The headache doesn't return the moment the pill wears off, because the pill didn't just mute the pain; it resolved the underlying issue. That's genuine relief.</p>
+<p>Now imagine a different scenario. Someone hands you a pair of headphones playing music at full volume. While the music is playing, you don't notice the headache. The sensory input is so overwhelming that your brain stops registering the pain. The moment the music stops, the headache is still there. Maybe worse, because you've been clenching your jaw to the beat and ignoring the signals your body was sending you.</p>
+<p>Did the headphones solve your headache? Or did they just distract you from feeling it?</p>
+<p>Now apply this test to your experience with escapist fiction. The next time you feel stressed and reach for a story, pay attention. Not during the escape — during the escape, you'll feel better, because your attention has been redirected. Pay attention afterward. When you close the app. When the story ends. When you surface.</p>
+<p>Is the stress gone? Actually gone — processed, resolved, released? Or is it still there, waiting, maybe a little heavier than before, joined by the guilt of lost time?</p>
+<p>If the stress returns the moment the escape ends — and you know, if you're honest with yourself, that it usually does — then the relief you felt during the escape wasn't relief. It was a temporary muting. A distraction. A blindfold. The magician didn't have a cleaning cloth. He just made you look away from the stain, and while you were looking away, the stain didn't go anywhere.</p>
+<p>The Magic Trick is now exposed. Not as a clever metaphor. Not as an interesting theory. As a description of your direct, undeniable, repeated experience. You've been thanking the magician for removing a stain he secretly placed on your shirt.</p>
+<h3 id="why-stopping-feels-like-a-threat"><a class="header" href="#why-stopping-feels-like-a-threat">Why Stopping Feels Like a Threat</a></h3>
+<p>There's one more layer to the Magic Trick, and it's the most important one. It's the reason the thought of stopping escapist fiction feels terrifying, even after you've started to see through the illusion. It's the reason your mind, right now, might be searching for a way to dismiss what you've just read.</p>
+<p>When you imagine life without the escape, what do you see?</p>
+<p>Probably something like this: the same stress, the same boredom, the same emptiness — but now with no way out. Just sitting there, feeling it, with nothing to reach for. The discomfort that fiction used to relieve, now permanent. Unrelieved. Inescapable.</p>
+<p>That image feels unbearable. And because it feels unbearable, the mind recoils from the idea of stopping. The Big Monster whispers: <em>See? You need this. Without fiction, you'd be helpless. The stress would eat you alive. The boredom would swallow you whole. You can't afford to lose this escape.</em></p>
+<p>The magician creates the problem. Then he offers the solution. And then — this is the final move, the one that keeps the whole cycle spinning — he warns you that abandoning the solution will leave you defenseless against problems only he can solve.</p>
+<p><em>Without me, you'll keep losing things. I'm the only one who can retrieve them. If you send me away, you'll be robbed blind with no one to help you.</em></p>
+<p>But the magician is the one doing the robbing.</p>
+<p>The discomfort you're afraid of — the stress that feels unbearable without fiction, the boredom that feels bottomless, the emptiness that feels like it will swallow you — was amplified, and in some cases created, by the escape pattern itself. The habit trained your brain to be intolerant of quiet. It trained your brain to experience gaps as emergencies. It trained your brain to reach for fiction before you even registered the discomfort, so you never learned that the discomfort was survivable on its own.</p>
+<p>You're not afraid of life without fiction. You're afraid of the withdrawal symptoms the magician told you would be unbearable. And the magician is the one who caused the withdrawal.</p>
+<p>Think about what this means. The fear that keeps you trapped — the terror of stopping, the dread of losing your escape — is itself a product of the thing you're afraid to stop. The cycle creates the discomfort, sells you the solution, and then threatens you with the consequences of abandoning the solution. Every link in the chain is manufactured by the same hands.</p>
+<p>Once you see this, the threat dissolves. Not because you've become brave enough to face the unbearable discomfort. But because you've realized the unbearable discomfort was never a real thing waiting for you on the other side of stopping. It was a story the magician told you. A prediction, not a fact. A threat, not a truth.</p>
+<p>You've never experienced life without the escape pattern, so you don't actually know what it feels like. You only know what the magician told you it would feel like. And the magician has a vested interest in making that prediction sound as terrifying as possible.</p>
+<h3 id="where-we-go-from-here"><a class="header" href="#where-we-go-from-here">Where We Go From Here</a></h3>
+<p>The Magic Trick is the foundational illusion. It's the master sleight of hand that makes every other belief in the Big Monster possible. Because if you believe the relief is real — if you believe fiction genuinely solves something, genuinely provides something, genuinely makes your life better — then every other justification follows naturally.</p>
+<p>Of course you need fiction to relax. Look how relaxed you feel when you're reading.</p>
+<p>Of course fiction is a comfort. Look how much better you feel when you escape into a story.</p>
+<p>Of course you deserve this treat. Look how much it gives you.</p>
+<p>But if the relief isn't real — if it's a magic trick, a temporary muting of awareness manufactured by the same habit that created the discomfort — then every single one of those justifications collapses. You don't need fiction to relax because fiction never relaxed you. You don't need fiction for comfort because fiction never comforted you. You don't deserve the "treat" of escape because the escape was never a gift. It was a pickpocket handing back your own wallet and calling it generosity.</p>
+<p>Every subsequent chapter in this book is going to walk you through one specific version of the Magic Trick. We're going to watch the magician work in different pockets, with different props, on different streets.</p>
+<p>The Illusion of Relaxation: the magician creates a low-grade, pervasive tension — the restlessness of an overstimulated brain — and then sells you the temporary muting of that tension as "unwinding."</p>
+<p>The Illusion of Pleasure: the magician creates a dull, nagging craving — a hunger that's never quite satisfied — and then sells you the brief quieting of that craving as "enjoyment."</p>
+<p>The Illusion of Comfort: the magician amplifies your emotional pain — the loneliness, the sadness, the overwhelm — and then sells you the temporary escape from that amplified pain as "solace."</p>
+<p>Each chapter will show you the magician's hands moving in a different way. And by the time you've seen the trick from every angle — from the angle of relaxation, pleasure, comfort, reward, inspiration, productivity, and all the rest — you won't just understand it intellectually. You won't be able to be fooled by it anymore. The relief will still flicker, briefly, the way a magic trick still looks impressive even when you know how it's done. But you'll see it for what it is, and it will have no power to make you reach for your phone.</p>
+<p>That's the promise. Not that the discomfort of life will vanish. Not that you'll never feel stress or boredom or emptiness again. But that you'll stop mistaking the magician for a savior. You'll stop reaching for a solution that was never actually solving anything. You'll stop feeding a cycle that creates the very problems it claims to fix.</p>
+<p>And the first pocket we're going to examine — the first specific illusion we're going to dismantle — is the one you probably hold closest. The belief that escapist fiction relaxes you. That after a long day, a draining week, a difficult moment, the most restorative thing you can do is escape into a story and let the tension melt away.</p>
+<p>It's the most common justification. It's also the most elegant version of the Magic Trick. And once you see how it works, you'll never feel the same way about "unwinding" again.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="03.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="05.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="03.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="05.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
